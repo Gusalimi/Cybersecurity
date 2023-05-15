@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import argparse
 import sys
 import os
-import re
 import requests
 
 parser = argparse.ArgumentParser(description="The spider program allow you to extract all the images from a website, recursively, by providing a url as a parameter.")
@@ -43,3 +42,9 @@ for img in images:
 		print("img = ", img)
 		with open(args.p + '/' + img.split('/')[-1], 'wb') as handler:
 			handler.write(img_data)
+
+def main():
+	print("main")
+
+if __name__ == "__main__":
+	main()
