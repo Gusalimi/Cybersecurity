@@ -68,7 +68,8 @@ def download(url, pathname):
 
             with open(filename, "wb") as f:
                 try:
-                    progress = tqdm(total=file_size, unit='B', unit_scale=True, unit_divisor=1024, desc=f"Downloading {url}")
+                    progress = tqdm(total=file_size, unit='B', unit_scale=True, unit_divisor=1024,
+                                    dynamic_ncols=True, desc=f"Downloading {url}")
                     for chunk in response.iter_content(chunk_size=1024):
                         if chunk:
                             f.write(chunk)
